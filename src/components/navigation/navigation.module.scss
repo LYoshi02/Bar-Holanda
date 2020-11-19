@@ -14,7 +14,7 @@
         }
 
         span::after {
-            transform: translateY(0px) rotate(-90deg);
+            transform: translateY(-2px) rotate(-90deg);
         }
     }
 
@@ -67,7 +67,9 @@
         opacity: 1;
     }
 
-    span {
+    span,
+    span::after,
+    span::before {
         width: 3rem;
         height: 2px;
         display: block;
@@ -78,11 +80,6 @@
     span::after,
     span::before {
         content: '';
-        width: 3rem;
-        height: 2px;
-        display: block;
-        background-color: currentColor;
-        transition: $trn-short;
     }
 
     span::before {
@@ -90,7 +87,7 @@
     }
 
     span::after {
-        transform: translateY(8px);
+        transform: translateY(6px);
     }
 
     &:hover {

@@ -1,70 +1,59 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Image from "gatsby-image"
 
-import img1 from "../../assets/images/image1.jpg"
-import img2 from "../../assets/images/image2.jpg"
-import img3 from "../../assets/images/image3.jpg"
-import img4 from "../../assets/images/image4.jpg"
-import img5 from "../../assets/images/image5.jpg"
+import { imagesData } from "../../constants/images-data"
 
 import styles from "./images.module.scss"
 
 const Images = () => {
+  const query = useStaticQuery(graphql`
+    query {
+      allImageSharp(
+        filter: {
+          fluid: {
+            originalName: {
+              in: [
+                "image1.jpg"
+                "image2.jpg"
+                "image3.jpg"
+                "image4.jpg"
+                "image5.jpg"
+              ]
+            }
+          }
+        }
+        sort: { fields: fluid___originalName, order: ASC }
+      ) {
+        edges {
+          node {
+            fluid(maxWidth: 1200) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <div className={styles.Images}>
-      <div className={`${styles.Image} ${styles.MainImage}`}>
-        <img src={img1} alt="Bartender" />
-        <div className={styles.Description}>
-          <div className={styles.Top}></div>
-          <div className={styles.Bottom}></div>
-          <div className={styles.Left}></div>
-          <div className={styles.Right}></div>
-          <p>Bartenders Profesionales</p>
+      {query.allImageSharp.edges.map((image, index) => (
+        <div className={styles.ImageContainer}>
+          <Image
+            fluid={image.node.fluid}
+            className={styles.Image}
+            alt={imagesData[index].alt}
+          />
+          <div className={styles.Description}>
+            <div className={styles.Top}></div>
+            <div className={styles.Bottom}></div>
+            <div className={styles.Left}></div>
+            <div className={styles.Right}></div>
+            <p>{imagesData[index].description}</p>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.Image}>
-        <img src={img2} alt="Bartender" />
-        <div className={styles.Description}>
-          <div className={styles.Top}></div>
-          <div className={styles.Bottom}></div>
-          <div className={styles.Left}></div>
-          <div className={styles.Right}></div>
-          <p>Cocktails</p>
-        </div>
-      </div>
-
-      <div className={styles.Image}>
-        <img src={img3} alt="Bartender" />
-        <div className={styles.Description}>
-          <div className={styles.Top}></div>
-          <div className={styles.Bottom}></div>
-          <div className={styles.Left}></div>
-          <div className={styles.Right}></div>
-          <p>Comidas</p>
-        </div>
-      </div>
-
-      <div className={styles.Image}>
-        <img src={img4} alt="Bartender" />
-        <div className={styles.Description}>
-          <div className={styles.Top}></div>
-          <div className={styles.Bottom}></div>
-          <div className={styles.Left}></div>
-          <div className={styles.Right}></div>
-          <p>Artistas en Vivo</p>
-        </div>
-      </div>
-
-      <div className={styles.Image}>
-        <img src={img5} alt="Bartender" />
-        <div className={styles.Description}>
-          <div className={styles.Top}></div>
-          <div className={styles.Bottom}></div>
-          <div className={styles.Left}></div>
-          <div className={styles.Right}></div>
-          <p>Tragos</p>
-        </div>
-      </div>
+      ))}
     </div>
   )
 }
