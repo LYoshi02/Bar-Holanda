@@ -1,0 +1,36 @@
+.Footer {
+    background-color: $clr-dark-1;
+    padding: 2.5rem 5rem;
+    display: flex;
+    justify-content: flex-end;
+
+    @media only screen and (max-width: $bp-small) {
+        justify-content: center;
+    }
+}
+
+.Icon {
+    border-radius: 50%;
+    background-color: $clr-light;
+    display: inline-block;
+    height: 3.5rem;
+    width: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $trn-short;
+
+    svg {
+        fill: $clr-dark-1;
+        font-size: 1.8rem;
+    }
+
+    &:not(:last-child) {
+        margin-right: 1.5rem;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: $clr-primary;
+    }
+}
