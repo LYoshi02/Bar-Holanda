@@ -1,13 +1,5 @@
 .Navigation {
-    width: 100%;
-    height: 9rem;
-    padding: 2rem 4rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 200;
-    display: flex;
-    justify-content: flex-end;
+    position: relative;
 }
 
 .NavigationOpen {
@@ -28,6 +20,7 @@
 
     .Sidebar {
         transform: translateX(0);
+        visibility: visible;
 
         li {
             animation: slideRight 1s backwards;
@@ -62,7 +55,7 @@
     width: 5rem;
     height: 5rem;
     position: fixed;
-    z-index: 100;
+    z-index: 600;
     right: 2rem;
     top: 2rem;
     transition: $trn-short;
@@ -109,10 +102,12 @@
 .Sidebar {
     height: 100vh;
     width: 60vw;
+    visibility: hidden;
     background-color: $clr-dark-1;
     position: fixed;
-    margin: -2rem -4rem;
-    z-index: -1;
+    top: 0;
+    right: 0;
+    z-index: 500;
     transform: translateX(60vw);
     transition: $trn-short;
 
