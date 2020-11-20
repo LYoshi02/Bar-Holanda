@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styles from "./navigation.module.scss"
 
 const Navigation = () => {
@@ -20,19 +21,19 @@ const Navigation = () => {
       <div className={styles.Sidebar}>
         <ul>
           <li>
-            <a href="#">Nosotros</a>
+            <Link to="/">Nosotros</Link>
           </li>
           <li>
-            <a href="#">Menú</a>
+            <Link to="/">Menú</Link>
           </li>
           <li>
-            <a href="#">Reservaciones</a>
+            <Link to="/">Reservaciones</Link>
           </li>
           <li>
-            <a href="#">Contacto</a>
+            <Link to="/">Contacto</Link>
           </li>
           <li>
-            <a href="#">Trabajos</a>
+            <Link to="/">Trabajos</Link>
           </li>
         </ul>
       </div>

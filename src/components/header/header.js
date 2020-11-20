@@ -1,4 +1,5 @@
 import React from "react"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import { FiChevronsDown } from "react-icons/fi"
 
 import Button from "../button/button"
@@ -17,7 +18,7 @@ const Header = () => {
             ennui mlkshk.
           </p>
         </div>
-        <Button>Conocer Más</Button>
+        <Button clicked={() => scrollTo("#text")}>Conocer Más</Button>
         <FiChevronsDown />
       </div>
     </header>

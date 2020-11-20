@@ -2,8 +2,6 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 
-import aboutImg from "../../assets/images/about.jpg"
-import reservationImg from "../../assets/images/reservation.jpg"
 import Button from "../button/button"
 import styles from "./about.module.scss"
 
@@ -29,7 +27,12 @@ const About = () => {
 
   return (
     <React.Fragment>
-      <div className={styles.About}>
+      <div
+        className={styles.About}
+        data-sal="slide-right"
+        data-sal-duration="800"
+        data-sal-easing="ease-out"
+      >
         <div className={styles.Content}>
           <h2>Nosotros</h2>
           <p>
@@ -46,7 +49,12 @@ const About = () => {
         />
       </div>
 
-      <div className={`${styles.About} ${styles.AboutMirror}`}>
+      <div
+        className={`${styles.About} ${styles.AboutMirror}`}
+        data-sal="slide-right"
+        data-sal-duration="800"
+        data-sal-easing="ease-out"
+      >
         <div className={styles.Content}>
           <h2>Reservaciones</h2>
           <p>

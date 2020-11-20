@@ -4,7 +4,13 @@ import styles from "./text.module.scss"
 
 const Text = () => {
   return (
-    <div className={styles.Container}>
+    <div
+      className={styles.Container}
+      id="text"
+      data-sal="fade"
+      data-sal-duration="1000"
+      data-sal-easing="ease-in"
+    >
       <div className={styles.Text}>
         <h2>Una experiencia totalmente nueva</h2>
         <hr />

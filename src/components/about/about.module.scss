@@ -14,6 +14,16 @@
     }
 }
 
+@media only screen and (max-width: $bp-medium) {
+    [data-sal=slide-right] {
+        transform: translateX(0);
+    }
+
+    [data-sal|=slide] {
+        opacity: 1;
+    }
+}
+
 .Content {
     background-color: $clr-dark-3;
     grid-row: 3 / 10;

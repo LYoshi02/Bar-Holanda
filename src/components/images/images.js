@@ -30,6 +30,7 @@ const Images = () => {
             fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid_withWebp
             }
+            id
           }
         }
       }
@@ -39,7 +40,7 @@ const Images = () => {
   return (
     <div className={styles.Images}>
       {query.allImageSharp.edges.map((image, index) => (
-        <div className={styles.ImageContainer}>
+        <div className={styles.ImageContainer} key={image.node.id}>
           <Image
             fluid={image.node.fluid}
             className={styles.Image}
