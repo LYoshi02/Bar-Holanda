@@ -29,10 +29,23 @@ module.exports = {
         path: path.join(__dirname, `src`, `assets`, `images`),
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Bar Holanda`,
+        short_name: `Bar Holanda`,
+        start_url: `/`,
+        background_color: `#0D0D0F`,
+        theme_color: `#CF7500`,
+        display: `minimal-ui`,
+        icon: `src/assets/images/icon.png`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-smoothscroll`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
