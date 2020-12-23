@@ -58,5 +58,8 @@ module.exports = {
   siteMetadata: {
     title: "Bar Holanda",
     description: "Concepto de sitio web para un bar",
+    twitterUsername: "@LYoshi_02",
+    image: "/site-img.png",
+    siteUrl: "http://barconcept.netlify.com",
   },
 }

@@ -28,8 +28,6 @@ const Header = () => {
         alt="Bar Image"
         className={styles.BackgroundMobile}
         style={{ position: "absolute" }}
-        fadeIn
-        durationFadeIn={1000}
       />
 
       <div className={styles.Content}>

@@ -1,13 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import styles from "./button.module.scss"
 
 const Button = props => {
   return (
-    <Link to="/" className={styles.Button} onClick={props.clicked}>
+    <button type="button" className={styles.Button} onClick={props.clicked}>
       {props.children}
-    </Link>
+    </button>
   )
 }
 
