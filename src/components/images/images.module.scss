@@ -40,14 +40,20 @@
 
         img {
             transition: $trn-long !important;
-            transition-delay: 0 !important;
+            @include transition-fix;
         }
     }
 
     &:hover {
         .Image img {
-            filter: blur(3px) grayscale(100%) brightness(50%);
-            transform: scale(1.05);
+            filter: blur(3px) grayscale(100%) brightness(25%);
+            transform: scale(1.1);
+        }
+
+        @media only screen and (max-width: $bp-large) {
+            .Image img {
+                filter: grayscale(100%) brightness(25%);
+            }
         }
 
         .Description p {
@@ -57,13 +63,11 @@
         .Top,
         .Bottom {
             transform: scaleX(1);
-            transform-origin: center;
         }
 
         .Left,
         .Right {
             transform: scaleY(1);
-            transform-origin: center;
         }
     }
 }
@@ -87,6 +91,7 @@
         opacity: 0;
         transition: $trn-long;
         transition-delay: .25s;
+        @include transition-fix;
         text-transform: capitalize;
         word-break: break-word;
         font-style: italic;
@@ -103,9 +108,9 @@
         background-color: $clr-primary;
     }
 
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-medium) {
         p {
-            font-size: 2.5rem;
+            font-size: 4rem;
         }
     }
 
@@ -124,6 +129,7 @@
     top: 0;
     left: 0;
     transform: scaleX(0);
+    transform-origin: center;
     margin-top: 2rem;
 
     @media only screen and (max-width: $bp-small) {
@@ -138,6 +144,7 @@
     height: 5px;
     width: 100%;
     transform: scaleX(0);
+    transform-origin: center;
     margin-bottom: 2rem;
 
     @media only screen and (max-width: $bp-small) {
@@ -152,6 +159,7 @@
     top: 0;
     left: 0;
     transform: scaleY(0);
+    transform-origin: center;
     margin-left: 2rem;
 
     @media only screen and (max-width: $bp-small) {
@@ -166,6 +174,7 @@
     top: 0;
     right: 0;
     transform: scaleY(0);
+    transform-origin: center;
     margin-right: 2rem;
 
     @media only screen and (max-width: $bp-small) {

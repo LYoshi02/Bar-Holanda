@@ -24,3 +24,9 @@ body {
     background-color: $clr-dark-2;
     color: $clr-light;
 }
+
+::selection {
+    background-color: $clr-primary-3;
+    color: $clr-light;
+    // color: $clr-dark-1;
+}
