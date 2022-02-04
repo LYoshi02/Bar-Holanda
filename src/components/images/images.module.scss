@@ -46,7 +46,7 @@
 
     &:hover {
         .Image img {
-            filter: blur(3px) grayscale(100%) brightness(25%);
+            filter: grayscale(100%) brightness(25%);
             transform: scale(1.1);
         }
 
